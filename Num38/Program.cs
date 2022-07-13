@@ -1,11 +1,11 @@
 ﻿//Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-double [] fillMassive(int N, double min, double max)
+double [] fillMassive(int N, int min, int max)
 {
     double [] arr = new double [N];
     for (int i = 0; i < N; i++)
     {
-        arr[i] = Math.Round(max + new Random().NextDouble() * (max - min),2, MidpointRounding.AwayFromZero);
+        arr[i] = Math.Round(new Random().NextDouble() + new Random().Next(min,max),2, MidpointRounding.AwayFromZero);
     }
     return arr;
 }
@@ -18,7 +18,7 @@ void printMas(double [] a)
     }
 }
 
-double [] arr = fillMassive(6, -10, 10);
+double [] arr = fillMassive(6, 1, 4);
 
 printMas(arr);
 
